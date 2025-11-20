@@ -1,0 +1,42 @@
+<h3>予定一覧</h3>
+
+<p>
+  本日: <%= @today %><br>
+  登録されている予定: <%= @task_count %>件
+</p>
+
+<table>
+ <thead>
+  <tr>
+   <th>id</th>
+   <th>タイトル</th>
+   <th>開始日</th>
+   <th>終了日</th>
+   <th>終日</th>
+   <th>更新日時</th>
+   <th>詳細</th>
+   <th>編集</th>
+   <th>削除</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <% @tasks.each do |task| %>
+    <tr> 
+     <td><%= task.id %></td>
+     <td><%= task.title %></td>
+     <td><%= task.start_date %></td>
+     <td><%= task.end_date %></td>
+     <td><%= task.is_all_day ? "⚪︎" : "" %></td>
+     <td><%= task.updated_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></td>
+     <td><%= link_to "詳細", task_path(task) %></td>
+     <td><%= link_to "編集", edit_task_path(task) %></td>
+     <td><%= link_to "削除", task_path(task),
+              data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %></td>
+    </tr>
+    <% end %>
+ </tbody>
+</table>
+
+<p><%= link_to "予定の新規登録", new_task_path %></p>
+
