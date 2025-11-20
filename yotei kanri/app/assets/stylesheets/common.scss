@@ -1,0 +1,41 @@
+header {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-bottom:7px solid orange;
+}
+
+footer{
+    width:100%;
+    padding:15px;
+    margin-top: 30px;
+    border-top: 7px solid orange;
+}
+
+.partial{
+    color:white;
+    background-color:black;
+    text-align:center;
+    padding:1px;
+}
+
+table th{
+    padding:10px 20px;
+    border-bottom: 2px solid gray;
+}
+
+table td {
+background-color: #f9ecd5;
+padding: 10px 20px;    
+}
+
+.notice{
+    background-color: #ccf;
+    padding: 5px;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+  margin-left: 4px;
+}

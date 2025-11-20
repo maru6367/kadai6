@@ -1,0 +1,29 @@
+<%= render "shared/partial" %>
+
+<%= link_to "一覧に戻る", tasks_path %>
+
+<%= @task.title %>
+
+  <table>
+   <tr>
+    <th>開始日</th>
+    <td><%= @task.start_date %></td> 
+   </tr>
+
+   <tr>
+    <th>終了日</th>
+    <td><%= @task.end_date %></td>
+   </tr>
+
+   <tr>
+    <th>終日</th>
+    <td><%= @task.is_all_day ? '⚪︎': '' %></td>
+   </tr>
+
+   
+
+   <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @task.memo %></td>
+   </tr>
+  </table>
